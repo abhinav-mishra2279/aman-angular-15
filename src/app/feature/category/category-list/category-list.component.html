@@ -1,0 +1,20 @@
+<p>category-list works!</p>
+<ng-container *ngIf="categories$ | async as categories; else loading">
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+        <tr *ngFor="let c of categories">
+            <td>{{c.name}}</td>
+            <td>{{c.description}}</td>
+            <td>
+                <button (click)="handleDelete(c.id)">Delete</button>
+            </td>
+        </tr>
+    </table>
+</ng-container>
+
+<ng-template #loading>
+
+</ng-template>
