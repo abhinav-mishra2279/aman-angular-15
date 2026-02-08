@@ -32,3 +32,7 @@ jobs:
 
       - name: Verify app is running
         run: curl -f http://localhost:4200
+
+      - name: Fetch HTML output
+        run: |
+          curl http://localhost:4200
